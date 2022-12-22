@@ -1,0 +1,36 @@
+html {
+  height: -webkit-fill-available;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  /* Шрифт для всей страницы */
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  /* Сглаживание шрифтов */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  /* Цветовая схема */
+  --color-surface: #242424;
+  --color-on-surface: #fff;
+  --color-surface-secondary: #313131;
+  --color-item: #434343;
+  --color-on-item: #adadad;
+  --color-primary: #9376f4;
+  --color-on-primary: #fff;
+  --color-search: #313131;
+  --color-search-active: #434343;
+  --color-on-search: #747474;
+  --color-on-search-active: #fff;
+  /* Цвета страницы */
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}
