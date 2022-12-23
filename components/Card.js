@@ -31,7 +31,7 @@ export default class Card {
     return element;
   }
 
-  getCards(cards) {
+  generateCards(cards) {
     const elements = [];
     cards.forEach((card) => elements.push(this._generateCard(card)));
     return elements;
