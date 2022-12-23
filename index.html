@@ -34,10 +34,11 @@
         <form class="search__form">
           <div class="search__input-container">
             <input type="text" class="search__input" placeholder="Поиск вакансий...">
-            <ul class="search__suggestions">
-              <li class="search__suggestion"><a href="#" class="search__suggestion-link">Google</a></li>
-              <li class="search__suggestion"><a href="#" class="search__suggestion-link">Яндекс</a></li>
+            <ul class="search__suggests">
             </ul>
+            <template class="suggest-template">
+              <li class="search__suggest"><a href="#" class="search__suggest-link">Яндекс</a></li>
+            </template>
           </div>
           <button type="submit" class="search__button">Искать</button>
         </form>

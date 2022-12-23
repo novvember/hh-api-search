@@ -31,12 +31,13 @@ export default class HhApi {
     return cardsData;
   }
 
-  getSuggests(text) {
+  async getSuggests(text) {
     const url = `${HhApi.baseUrl}/suggests/vacancy_search_keyword?text=${text}`;
 
-    return fetch(url).then((res) => {
-      if (res.ok) return res.json();
-      throw new Error('Error on request');
-    });
+    const res = await fetch(url);
+
+    if (!res.ok) throw new Error('Error on request');
+    const data = await res.json();
+    return data.items.map((item) => item.text);
   }
 }
