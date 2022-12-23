@@ -1,4 +1,5 @@
 import Card from '../components/Card.js';
+import Requests from '../components/Requests.js';
 import Results from '../components/Results.js';
 import Search from '../components/Search.js';
 import Suggests from '../components/Suggests.js';
@@ -13,8 +14,12 @@ async function getApiSuggests() {
   return await api.getSuggests(text);
 }
 
-async function getLocalSuggests() {
-  return [];
+async function getLocalSuggests(n) {
+  const text = search.getText();
+  return requests
+    .get()
+    .filter((request) => request.toLowerCase().includes(text.toLowerCase()))
+    .slice(0, n);
 }
 
 function handleSuggestClick(text) {
@@ -27,15 +32,7 @@ async function handleFormSubmit(evt) {
   const text = search.getText();
   if (text.trim() === '') return;
 
-  let prevRequests = [];
-
-  try {
-    prevRequests = JSON.parse(localStorage.getItem('requests')) ?? [];
-  } catch {
-    console.warn("Can't read local storage");
-  }
-
-  localStorage.setItem('requests', JSON.stringify([text, ...prevRequests]));
+  requests.add(text);
 
   let cardsData;
 
@@ -50,6 +47,7 @@ async function handleFormSubmit(evt) {
   search.blur();
 }
 
+const requests = new Requests('requests');
 const api = new HhApi();
 const resultList = new Results('.results__list');
 const card = new Card('.card-template');

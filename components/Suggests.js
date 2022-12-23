@@ -13,6 +13,9 @@ export default class Suggests {
     this._getLocalSuggests = getLocalSuggests;
     this._getApiSuggests = getApiSuggests;
     this._onClick = onClick;
+
+    this._TOTAL_MAX = 10;
+    this._LOCAL_MAX = 5;
   }
 
   _clear() {
@@ -27,6 +30,10 @@ export default class Suggests {
     const link = element.querySelector('.search__suggest-link');
     link.textContent = text;
 
+    if (isLocal) {
+      link.classList.add('search__suggest-link_type_local');
+    }
+
     link.addEventListener('click', () => this._onClick(text));
 
     return element;
@@ -35,9 +42,15 @@ export default class Suggests {
   async update() {
     this._clear();
 
+    const localSuggests = await this._getLocalSuggests(this._LOCAL_MAX);
+
+    localSuggests.forEach((text) => {
+      this._suggests.append(this._generateElement(text, true));
+    });
+
     const apiSuggests = await this._getApiSuggests();
 
-    apiSuggests.forEach((text) => {
+    apiSuggests.slice(0, this._TOTAL_MAX - localSuggests.length).forEach((text) => {
       this._suggests.append(this._generateElement(text));
     });
   }

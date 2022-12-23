@@ -76,9 +76,25 @@
 }
 
 .search__suggest-link {
+  position: relative;
   text-decoration: none;
   color: inherit;
   display: block;
+}
+
+.search__suggest-link_type_local::before {
+  content: '';
+  display: block;
+  width: 1em;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 50%;
+  left: -1.5em;
+  transform: translateY(-60%);
+  background-image: url(../images/clock-icon.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .search__button {
