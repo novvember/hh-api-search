@@ -34,7 +34,7 @@ export default class Suggests {
       link.classList.add('search__suggest-link_type_local');
     }
 
-    link.addEventListener('click', () => this._onClick(text));
+    link.addEventListener('mousedown', () => this._onClick(text));
 
     return element;
   }
@@ -50,8 +50,10 @@ export default class Suggests {
 
     const apiSuggests = await this._getApiSuggests();
 
-    apiSuggests.slice(0, this._TOTAL_MAX - localSuggests.length).forEach((text) => {
-      this._suggests.append(this._generateElement(text));
-    });
+    apiSuggests
+      .slice(0, this._TOTAL_MAX - localSuggests.length)
+      .forEach((text) => {
+        this._suggests.append(this._generateElement(text));
+      });
   }
 }

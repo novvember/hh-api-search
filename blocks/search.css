@@ -42,7 +42,6 @@
 
 .search__suggests {
   max-height: 0;
-  overflow-y: auto;
   position: absolute;
   top: 100%;
   left: 0;
