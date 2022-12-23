@@ -31,7 +31,7 @@
   background-color: var(--color-search);
   color: var(--color-on-search);
   border: none;
-  border-radius: 0.5em;
+  border-radius: 1.5em;
   padding: 1em;
   padding-left: 3.5em;
   transition: background-color 0.2s, color 0.2s;
