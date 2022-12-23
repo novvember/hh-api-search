@@ -45,23 +45,17 @@
       <section class="results">
         <h2 class="results__title">Результаты поиска</h2>
         <ul class="results__list">
-          <li class="results__item"><a href="#" class="card">Вакансия
-            </a></li>
-          <li class="results__item"><a href="#" class="card">Вакансия
-            </a></li>
-          <li class="results__item"><a href="#" class="card">Вакансия
-            </a></li>
-          <li class="results__item"><a href="#" class="card">Вакансия
-            </a></li>
-          <li class="results__item"><a href="#" class="card">Вакансия
-            </a></li>
-          <li class="results__item"><a href="#" class="card">Вакансия
-            </a></li>
-          <li class="results__item"><a href="#" class="card">Вакансия
-            </a></li>
-          <li class="results__item"><a href="#" class="card">Вакансия
-            </a></li>
         </ul>
+        <template class="card-template">
+          <li class="results__item">
+            <a href="#" class="card">
+              <img src="#" alt="" class="card__logo">
+              <h3 class="card__company">Компания</h3>
+              <span class="card__name">Разработчик</span>
+              <span class="card__city">Москва</span>
+            </a>
+          </li>
+        </template>
       </section>
     </main>
 
@@ -70,6 +64,8 @@
     </footer>
 
   </div>
+
+  <script src="./pages/index.js" type="module"></script>
 </body>
 
 </html>

@@ -22,7 +22,7 @@ html {
   --color-surface: #242424;
   --color-on-surface: #fff;
   --color-surface-secondary: #313131;
-  --color-item: #434343;
+  --color-item: rgba(255, 255, 255, 0.1);
   --color-on-item: #adadad;
   --color-primary: #9376f4;
   --color-on-primary: #fff;

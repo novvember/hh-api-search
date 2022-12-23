@@ -1,14 +1,55 @@
 .card {
-  display: block;
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  grid-template-areas:
+    'logo company'
+    'name name'
+    'city city';
+  column-gap: 0.5em;
+  row-gap: 1.5em;
   background-color: var(--color-surface-secondary);
   border-radius: 1.5em;
   padding: 1em;
   color: inherit;
   text-decoration: none;
   transition: background-color 0.2s;
-
 }
 
 .card:hover {
   background-color: var(--color-primary);
+}
+
+.card__logo {
+  grid-area: logo;
+  align-self: center;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.card__company {
+  grid-area: company;
+  margin: 0;
+  align-self: center;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.card__name {
+  grid-area: name;
+  font-weight: 500;
+  font-size: 1.2em;
+  line-height: 1.2;
+}
+
+.card__city {
+  grid-area: city;
+  justify-self: left;
+  align-self: start;
+  background-color: var(--color-item);
+  color: var(--color-on-surface);
+  border-radius: 0.5em;
+  padding: 0.1em 0.5em;
 }
