@@ -1,4 +1,5 @@
 import Card from '../components/Card.js';
+import History from '../components/History.js';
 import Requests from '../components/Requests.js';
 import Results from '../components/Results.js';
 import Search from '../components/Search.js';
@@ -14,10 +15,13 @@ async function getApiSuggests() {
   return await api.getSuggests(text);
 }
 
-async function getLocalSuggests(n) {
+function getLocalRequests() {
+  return requests.get();
+}
+
+function getLocalSuggests(n = 10) {
   const text = search.getText();
-  return requests
-    .get()
+  return getLocalRequests()
     .filter((request) => request.toLowerCase().includes(text.toLowerCase()))
     .slice(0, n);
 }
@@ -33,6 +37,7 @@ async function handleFormSubmit(evt) {
   if (text.trim() === '') return;
 
   requests.add(text);
+  history.update();
 
   let cardsData;
 
@@ -47,10 +52,17 @@ async function handleFormSubmit(evt) {
   search.blur();
 }
 
-const requests = new Requests('requests');
 const api = new HhApi();
 const resultList = new Results('.results__list');
 const card = new Card('.card-template');
+const requests = new Requests('requests');
+
+const history = new History({
+  elementSelector: '.history__list',
+  templateSelector: '.history-template',
+  getRequests: getLocalRequests,
+  onClick: handleSuggestClick,
+});
 
 const search = new Search({
   formSelector: '.search__form',
@@ -67,3 +79,6 @@ const suggests = new Suggests({
 
 searchInput.addEventListener('input', suggests.update.bind(suggests));
 searchForm.addEventListener('submit', handleFormSubmit);
+window.addEventListener('storage', history.update.bind(history));
+
+history.update();
