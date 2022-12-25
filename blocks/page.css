@@ -27,16 +27,6 @@ html {
   --color-on-primary: #161616;
   --color-secondary: #e579b9;
   --color-on-secondary: #161616;
-
-
-
-  --color-surface-secondary: #313131;
-  --color-item: rgba(255, 255, 255, 0.1);
-  --color-on-item: #adadad;
-  --color-search: #313131;
-  --color-search-active: #434343;
-  --color-on-search: #747474;
-  --color-on-search-active: #fff;
   /* Цвета страницы */
   background-color: var(--color-surface);
   color: var(--color-on-surface);
