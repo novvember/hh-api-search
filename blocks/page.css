@@ -19,13 +19,20 @@ html {
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   /* Цветовая схема */
-  --color-surface: #242424;
-  --color-on-surface: #fff;
+  --color-surface: #f6f6f6;
+  --color-on-surface: #161616;
+  --color-surface-variant: #e5e5e5;
+  --color-surface-primary: #fff;
+  --color-primary: #cbfb5e;
+  --color-on-primary: #161616;
+  --color-secondary: #e579b9;
+  --color-on-secondary: #161616;
+
+
+
   --color-surface-secondary: #313131;
   --color-item: rgba(255, 255, 255, 0.1);
   --color-on-item: #adadad;
-  --color-primary: #9376f4;
-  --color-on-primary: #fff;
   --color-search: #313131;
   --color-search-active: #434343;
   --color-on-search: #747474;

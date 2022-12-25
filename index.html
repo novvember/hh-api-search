@@ -8,14 +8,16 @@
   <title>Поиск по hh.ru</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./pages/index.css">
 </head>
 
 <body class="page">
   <div class="content">
     <header class="header content__header">
-      <h1 class="header__title">Поиск по hh.ru</h1>
+      <img class="header__logo" alt="Пиктограмма рабочего. Логотип сервиса" src="./images/logo.svg">
+      <h1 class="header__title">Поиск по <a href="http://hh.ru">hh.ru</a></h1>
     </header>
 
     <aside class="aside content__aside">
@@ -33,7 +35,7 @@
       <section class="search">
         <form class="search__form">
           <div class="search__input-container">
-            <input type="text" class="search__input" placeholder="Поиск вакансий...">
+            <input type="text" class="search__input" placeholder="Введите название вакансии">
             <ul class="search__suggests">
             </ul>
             <template class="suggest-template">
@@ -50,8 +52,8 @@
           <li class="results__item">
             <a href="#" class="card">
               <img src="#" alt="" class="card__logo">
-              <h3 class="card__company">Компания</h3>
-              <span class="card__name">Разработчик</span>
+              <span class="card__company">Компания</span>
+              <h2 class="card__name">Разработчик</h2>
               <span class="card__city">Москва</span>
             </a>
           </li>

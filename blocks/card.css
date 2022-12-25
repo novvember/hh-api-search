@@ -2,12 +2,12 @@
   display: grid;
   grid-template-columns: 35px 1fr;
   grid-template-areas:
-    'logo company'
     'name name'
+    'logo company'
     'city city';
   column-gap: 0.5em;
-  row-gap: 1.5em;
-  background-color: var(--color-surface-secondary);
+  row-gap: 1em;
+  background-color: var(--color-surface-primary);
   border-radius: 1.5em;
   padding: 1em;
   color: inherit;
@@ -33,23 +33,29 @@
   grid-area: company;
   margin: 0;
   align-self: center;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 1em;
 }
 
 .card__name {
+  margin: 0;
   grid-area: name;
-  font-weight: 500;
+  font-weight: 800;
   font-size: 1.2em;
   line-height: 1.2;
 }
 
 .card__city {
+  font-weight: 400;
   grid-area: city;
   justify-self: left;
   align-self: start;
-  background-color: var(--color-item);
-  color: var(--color-on-surface);
   border-radius: 0.5em;
   padding: 0.1em 0.5em;
+  border: 1px solid var(--color-surface-variant);
+  transition: border-color 0.2s;
+}
+
+.card:hover .card__city {
+  border-color: var(--color-on-surface);
 }
