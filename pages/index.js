@@ -9,6 +9,20 @@ import HhApi from '../utils/HhApi.js';
 const searchForm = document.querySelector('.search__form');
 const searchInput = searchForm.querySelector('.search__input');
 
+function debounce(f, waitMs) {
+  let timerId = -1;
+
+  return (...args) => {
+    clearTimeout(timerId);
+
+    const promiseForFunc = new Promise((resolve) => {
+      timerId = setTimeout(resolve, waitMs);
+    });
+
+    return promiseForFunc.then(() => f(...args));
+  };
+}
+
 async function getApiSuggests() {
   const text = search.getText();
   if (text.length < 2) return [];
@@ -73,7 +87,7 @@ const suggests = new Suggests({
   elementSelector: '.search__suggests',
   templateSelector: '.suggest-template',
   getLocalSuggests,
-  getApiSuggests,
+  getApiSuggests: debounce(getApiSuggests, 1000),
   onClick: handleSuggestClick,
 });
 
