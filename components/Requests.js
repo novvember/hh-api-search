@@ -18,6 +18,15 @@ export default class Requests {
   add(text) {
     const prevRequests = this.get();
     const newRequests = [...new Set([text, ...prevRequests])];
-    localStorage.setItem(this._key, JSON.stringify(newRequests));
+
+    try {
+      localStorage.setItem(this._key, JSON.stringify(newRequests));
+    } catch (err) {
+      if (err === QUOTA_EXCEEDED_ERR) {
+        console.warn('Storage quota exceeded!');
+      } else {
+        console.warn('Something went wrong while saving requests!');
+      }
+    }
   }
 }
