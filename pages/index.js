@@ -26,7 +26,13 @@ function debounce(f, waitMs) {
 async function getApiSuggests() {
   const text = search.getText();
   if (text.length < 2) return [];
-  return await api.getSuggests(text);
+
+  try {
+    return await api.getSuggests(text);
+  } catch {
+    console.warn("Can't get search suggests.");
+    return [];
+  }
 }
 
 function getLocalRequests() {
