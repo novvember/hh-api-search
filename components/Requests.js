@@ -22,11 +22,7 @@ export default class Requests {
     try {
       localStorage.setItem(this._key, JSON.stringify(newRequests));
     } catch (err) {
-      if (err === QUOTA_EXCEEDED_ERR) {
-        console.warn('Storage quota exceeded!');
-      } else {
-        console.warn('Something went wrong while saving requests!');
-      }
+      console.warn('Storage quota exceeded!');
     }
   }
 }
