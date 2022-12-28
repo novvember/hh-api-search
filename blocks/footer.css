@@ -1,0 +1,9 @@
+.footer {
+  padding-block: 1em;
+}
+
+.footer__text {
+  text-align: center;
+  margin: 0;
+  font-weight: normal;
+}

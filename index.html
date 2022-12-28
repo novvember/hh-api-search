@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поиск по hh.ru</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+
+<body class="page">
+  <div class="content">
+    <header class="header content__header">
+      <img class="header__logo" alt="Пиктограмма рабочего. Логотип сервиса" src="./images/logo.svg">
+      <h1 class="header__title">Поиск по <a href="http://hh.ru">hh.ru</a></h1>
+    </header>
+
+    <aside class="aside content__aside">
+      <section class="history">
+        <h2 class="history__title">Прошлые поиски</h2>
+        <ul class="history__list">
+        </ul>
+        <template class="history-template">
+          <li class="history__item"><a href="#" class="history__link"></a></li>
+        </template>
+      </section>
+    </aside>
+
+    <main class="content__main">
+      <section class="search">
+        <form class="search__form">
+          <div class="search__input-container">
+            <input type="text" class="search__input" placeholder="Введите название вакансии">
+            <ul class="search__suggests">
+            </ul>
+            <template class="suggest-template">
+              <li class="search__suggest"><a href="#" class="search__suggest-link">Яндекс</a></li>
+            </template>
+          </div>
+          <button type="submit" class="search__button">Искать</button>
+        </form>
+      </section>
+      <section class="results" aria-label="Результаты поиска">
+        <ul class="results__list">
+        </ul>
+        <template class="card-template">
+          <li class="results__item">
+            <a href="#" class="card">
+              <img src="#" alt="" class="card__logo">
+              <span class="card__company">Компания</span>
+              <h2 class="card__name">Разработчик</h2>
+              <span class="card__city">Москва</span>
+            </a>
+          </li>
+        </template>
+      </section>
+    </main>
+
+    <footer class="footer content__footer">
+      <p class="footer__text">Домашнее задание для «Школы программистов HeadHunter» / © 2022 novvember</p>
+    </footer>
+
+  </div>
+
+  <script src="./pages/index.js" type="module"></script>
+</body>
+
+</html>

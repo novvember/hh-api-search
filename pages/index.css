@@ -1,0 +1,10 @@
+@import url(../vendor/normalize.css);
+
+@import url(../blocks/page.css);
+@import url(../blocks/content.css);
+@import url(../blocks/header.css);
+@import url(../blocks/history.css);
+@import url(../blocks/search.css);
+@import url(../blocks/results.css);
+@import url(../blocks/footer.css);
+@import url(../blocks/card.css);
